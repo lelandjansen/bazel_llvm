@@ -2,15 +2,24 @@
 
 sh_test(
     name = "clang-compile-10.0.0",
-    srcs = ["clang-compile.sh"],
+    srcs = ["clang-compile-10.0.0.sh"],
     data = ["@llvm//10.0.0:clang"],
     deps = [
         "@bazel_tools//tools/bash/runfiles",
     ],
 )
 
+sh_test(
+    name = "clang-compile-6.0.0",
+    srcs = ["clang-compile-6.0.0.sh"],
+    data = ["@llvm//6.0.0:clang"],
+    deps = [
+        "@bazel_tools//tools/bash/runfiles",
+    ],
+)
+
 cc_binary(
-    name = "clang-interpreter",
+    name = "clang-interpreter-10.0.0",
     srcs = ["clang-interpreter.cc"],
     copts = [
         "-std=c++14",
@@ -18,6 +27,17 @@ cc_binary(
         "-fno-rtti",
     ],
     deps = ["@llvm//10.0.0"],
+)
+
+cc_binary(
+    name = "clang-interpreter-6.0.0",
+    srcs = ["clang-interpreter.cc"],
+    copts = [
+        "-std=c++14",
+        "-fno-exceptions",
+        "-fno-rtti",
+    ],
+    deps = ["@llvm//6.0.0"],
 )
 
 sh_test(
