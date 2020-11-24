@@ -23,6 +23,46 @@ filegroup(
 """
 
   http_archive(
+    name="clang-11.0.0",
+    build_file_content = srcs_build_file,
+    sha256 = "0f96acace1e8326b39f220ba19e055ba99b0ab21c2475042dbc6a482649c5209",
+    strip_prefix="clang-11.0.0.src",
+    urls=[
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang-11.0.0.src.tar.xz",
+    ],
+  )
+
+  http_archive(
+    name="llvm-11.0.0",
+    build_file_content = srcs_build_file,
+    sha256 = "913f68c898dfb4a03b397c5e11c6a2f39d0f22ed7665c9cefa87a34423a72469",
+    strip_prefix="llvm-11.0.0.src",
+    urls=[
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/llvm-11.0.0.src.tar.xz",
+    ],
+  )
+
+  http_archive(
+    name="clang-llvm-11.0.0-x86_64-apple-darwin",
+    build_file="@llvm//:llvm_macos.BUILD",
+    sha256="b93886ab0025cbbdbb08b46e5e403a462b0ce034811c929e96ed66c2b07fe63a",
+    strip_prefix="clang+llvm-11.0.0-x86_64-apple-darwin",
+    urls=[
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang+llvm-11.0.0-x86_64-apple-darwin.tar.xz"
+    ],
+  )
+
+  http_archive(
+    name="clang-llvm-11.0.0-x86_64-linux-gnu-ubuntu-20.04",
+    build_file="@llvm//:llvm_linux.BUILD",
+    sha256="829f5fb0ebda1d8716464394f97d5475d465ddc7bea2879c0601316b611ff6db",
+    strip_prefix="clang+llvm-11.0.0-x86_64-linux-gnu-ubuntu-20.04",
+    urls=[
+      "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/clang+llvm-11.0.0-x86_64-linux-gnu-ubuntu-20.04.tar.xz"
+    ],
+  )
+
+  http_archive(
     name="clang-10.0.0",
     build_file_content = srcs_build_file,
     sha256 = "885b062b00e903df72631c5f98b9579ed1ed2790f74e5646b4234fa084eacb21",

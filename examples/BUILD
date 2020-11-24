@@ -41,14 +41,14 @@ cc_test(
 )
 
 cc_library(
-    name = "hello-pass-10.0.0",
+    name = "hello-pass-11.0.0",
     srcs = ["hello-pass.cc"],
     copts = [
         "-std=c++14",
         "-fno-exceptions",
         "-fno-rtti",
     ],
-    deps = ["@llvm//10.0.0"],
+    deps = ["@llvm//11.0.0"],
 )
 
 cc_test(

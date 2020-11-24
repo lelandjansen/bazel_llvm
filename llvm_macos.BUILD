@@ -60,6 +60,11 @@ filegroup(
 )
 
 filegroup(
+    name = "clang-11",
+    srcs = ["bin/clang-11"],
+)
+
+filegroup(
     name = "clang-apply-replacements",
     srcs = ["bin/clang-apply-replacements"],
 )
