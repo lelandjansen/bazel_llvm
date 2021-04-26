@@ -55,13 +55,8 @@ filegroup(
 )
 
 filegroup(
-    name = "clang-10",
-    srcs = ["bin/clang-10"],
-)
-
-filegroup(
-    name = "clang-11",
-    srcs = ["bin/clang-11"],
+    name = "clang-12",
+    srcs = ["bin/clang-12"],
 )
 
 filegroup(
@@ -519,10 +514,10 @@ filegroup(
     srcs = ["bin/modularize"],
 )
 
-filegroup(
-    name = "obj2yaml",
-    srcs = ["bin/obj2yaml"],
-)
+# filegroup(
+#     name = "obj2yaml",
+#     srcs = ["bin/obj2yaml"],
+# )
 
 filegroup(
     name = "opt",

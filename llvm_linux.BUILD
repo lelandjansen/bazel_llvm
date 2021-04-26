@@ -83,8 +83,8 @@ filegroup(
 )
 
 filegroup(
-    name = "clang-10",
-    srcs = ["bin/clang-10"],
+    name = "clang-12",
+    srcs = ["bin/clang-12"],
 )
 
 filegroup(
